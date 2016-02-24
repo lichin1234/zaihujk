@@ -1,0 +1,16 @@
+{
+  "name": "zaihujkExpress",
+  "version": "0.0.1",
+  "description": "瑞麦科技有限公司在乎健康web服务器与前端集合",
+  "main": "zaihujk.js",
+  "author": "lichin",
+  "license": "ISC",
+  "dependencies": {
+    "express-handlebars": "*",
+    "express": "^4.13.4",
+    "mongoose": "*",
+    "serve-favicon": "*",
+    "body-parser": "*",
+    "morgan": "~1.6.1"
+  }
+}

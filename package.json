@@ -1,0 +1,10 @@
+{
+  "name": "zaihujk",
+  "version": "0.0.1",
+  "description": "瑞麦科技有限公司在乎健康web开发",
+  "author": "lichin",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
