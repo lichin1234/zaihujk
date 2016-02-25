@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>在乎健康丨身边的E药师</title>
+  <meta http-equiv="X-UA-Compatibale" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+  <meta name="keywords" content="在乎,zaihu,健康,jiankang,在乎健康,吃药,提醒,用药,用药参考,用药管家,健康资讯,医药健康导航,药师交流平台,药品说明书,家庭用药,合理用药,长辈提醒用药,FDA妊娠分级,SFDA,CMEA,药监局,中国药协会,安全用药指导">
+  <meta name="description" content="在乎健康是关注合理用药的E药师，你可以查看健康资讯、快速查询到药品说明书上的用药注意事项，未来还将提供医药健康指导、药师与患者交流、药师与药师交流、患者与患者交流的平台。">
+  <meta name="author" content="sz-reminding-web-lichin">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="copyright" content="深圳瑞麦科技有限公司(ShenZhen Remind Science and Technology Co. Ltd)">
+	<meta name="renderer" content="webkit">
+	<link rel="icon" href="http://7xjwgk.com1.z0.glb.clouddn.com/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/3.2.0/css/font-awesome-ie7.min.css">
+  <![endif]-->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/tooltipster/3.3.0/css/tooltipster.min.css">
+  <link rel="stylesheet" href="static/common/css/default.css">
+  <link rel="stylesheet" href="static/zhjk/css/index.css">
+</head>
+<body>
+  {{> header}}
+  <div class="page-container">
+    <div class="logo">
+      <img src="http://img.zaihujk.com/common/logo-green.png" alt="">
+    </div>
+    <div class="searchwrap">
+      <form action="/cms/drug/name" name="keyword" id="searchForm" method="get">
+        <i></i>
+        <input type="text" name="keyword" autocomplete="off" placeholder="请输入拼音首字母或药名" class="keyword" id="">
+        <input type="submit" value="搜索" class="btn">
+      </form>
+    </div>
+    <div class="hotsearch">
+      <!-- <span>热门搜索：</span> -->
+      <ul id="beforeDrug" data-content="">
+        {{#each data}}
+          <li><a href="{{url}}">{{name}}</a></li>
+        {{/each}}
+      </ul>
+      <!--[if lt IE 9]>
+        <script>
+          var beforeDrug = function(dom) {
+            if(document.querySelector || !dom && dom.nodeType !== 1) return;
+
+            var before = document.createElement('before');
+            before.innerHTML = '热门搜索：';
+            dom.insertBefore(before, dom.firstChild);
+          }
+          beforeDrug(document.getElementById('beforeDrug'));
+        </script>
+      <![endif]-->
+    </div>
+    <div class="sitenav">
+      <ul class="navbar-nav">
+        <li>
+          <a class="d-sort" href="drugs/drug_classify.html">
+            <i class="drug-icon"></i>
+            <span>药品分类</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-interaction" href="drugs/drug_interaction.html">
+            <i class="drug-icon"></i>
+            <span>药物合用</span>
+          </a>
+        </li>
+        <!-- <li><a href="">妊娠分级</a></li> -->
+        <li>
+          <a class="d-use" href="">
+            <i class="drug-icon"></i>
+            <span>剂型使用</span>
+          </a>
+        </li>
+        <!-- <li><a href="">饮食禁忌</a></li> -->
+      </ul>
+    </div>
+  </div>
+  {{> footer}}
+  {{> copyright}}
+  <!--[if lt IE 9]>
+  <script>
+    window.alert('您使用的浏览器是IE兼容模式或低版本IE,切换为极速模式或升级您的IE能获得更好的体验。');
+  </script>
+  <![endif]-->
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script>
+  <script src="http://cdn.bootcss.com/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+  <script src="static/zhjk/js/index.js"></script>
+  <script src="static/common/js/autocomplete.js"></script>
+  <script>
+    $(function(){
+      index.init();
+      AutoComplete.init({url:'src/staticData/drugs.txt'});
+    });
+  </script>
+  <script>
+    function addCopyright() {
+      var Original = "转自【在乎健康】：" + location.href; //修改你的网站名称
+      if ("function" == typeof window.getSelection) {
+        var c = window.getSelection();
+        if ("Microsoft Internet Explorer" == navigator.appName && navigator.appVersion.match(/MSIE ([\d.]+)/)[1] >= 10 || "Opera" == navigator.appName) {
+          var g = c.getRangeAt(0),
+          h = document.createElement("span");
+          h.appendChild(g.cloneContents()),
+          g.insertNode(h);
+          var i = h.innerHTML.replace(/(?:\n|\r\n|\r)/gi, "").replace(/<\s*script[^>]*>[\s\S]*?<\/script>/gim, "").replace(/<\s*style[^>]*>[\s\S]*?<\/style>/gim, "").replace(/<!--.*?-->/gim, "").replace(/<!DOCTYPE.*?>/gi, "");
+          try {
+            document.getElementsByTagName("body")[0].removeChild(h)
+          } catch(f) {
+            h.style.display = "none",
+            h.innerHTML = ""
+          }
+        } else var d = "" + c;
+        var e = document.getElementsByTagName("body")[0],
+        f = document.createElement("div");
+        f.style.position = "absolute",
+        f.style.left = "-99999px",
+        e.appendChild(f),
+        f.innerHTML = d.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, "$1<br />$2") + "<br />" + Original,
+        c.selectAllChildren(f),
+        setTimeout(function() {
+          e.removeChild(f)},0);
+      } else if ("object" == typeof document.selection.createRange) {
+        event.returnValue = !1;
+        var c = document.selection.createRange().text;
+        window.clipboardData.setData("Text", c + "\n" + Original)
+      }
+    };
+    document.body.oncopy = addCopyright;
+  </script>
+</body>
+</html>

@@ -7,10 +7,6 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Index.getHotKeyword(function(err, keywordArr) {
-      if(err) return next(err);
-      if(!keywordArr) return next();
-      res.render('index', keywordArr);
-    });
+    res.render('index', Index.getHotKeyword());
   },
 }

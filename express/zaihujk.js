@@ -9,10 +9,11 @@ var app = express();
 // 定制环境
 app.set('port', process.env.PORT || 3000);
 // 模板引擎
-app.set('views', path.join(__dirname + 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', exphbs({
   layoutsDir: 'views',
   defaultLayout: 'layout',
+  partialsDir: 'views/common/',
   extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
